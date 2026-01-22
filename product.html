@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | TradeTools Pro</title>
+    <style>
+        :root {
+            --primary: #0077cc;
+            --primary-light: #e6f2ff;
+            --secondary: #005fa3;
+            --text: #333333;
+            --light-text: #666666;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Product Header */
+        .product-header {
+            padding: 120px 0 40px;
+            background-color: var(--primary-light);
+            text-align: center;
+        }
+        
+        .product-header h1 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Product Content */
+        .product-content {
+            padding: 60px 0;
+        }
+        
+        .product-section {
+            margin-bottom: 60px;
+        }
+        
+        .product-section h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-item {
+            background-color: var(--light-gray);
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Features */
+        .features {
+            margin-bottom: 30px;
+        }
+        
+        .features ul {
+            list-style-type: none;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background-color: var(--primary-light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            opacity: 0.8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .product-header h1 {
+                font-size: 28px;
+            }
+            
+            .product-section h2 {
+                font-size: 24px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .price {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">TradeTools Pro</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#products">Products</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="product-header">
+        <div class="container">
+            <h1>Excel Option Chain Tool</h1>
+            <p>Advanced option chain analysis directly in Excel</p>
+        </div>
+    </section>
+
+    <section class="product-content">
+        <div class="container">
+            <div class="product-section">
+                <h2>Product Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="http://static.photos/finance/640x360/4" alt="Excel Option Chain Tool Screenshot 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="http://static.photos/finance/640x360/5" alt="Excel Option Chain Tool Screenshot 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="http://static.photos/finance/640x360/6" alt="Excel Option Chain Tool Screenshot 3">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-section">
+                <h2>Product Video</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="product-section">
+                <h2>Key Features</h2>
+                <div class="features">
+                    <ul>
+                        <li>Real-time option chain data integration</li>
+                        <li>Customizable filters for strike prices, expiration dates</li>
+                        <li>Advanced volatility and Greeks calculations</li>
+                        <li>Visual heatmaps for open interest and volume</li>
+                        <li>Automated alerts for unusual option activity</li>
+                        <li>Works with Excel 2016 and newer versions</li>
+                        <li>Regular updates with new features</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="product-section">
+                <h2>Description</h2>
+                <p>The Excel Option Chain Tool revolutionizes how you analyze options data. This powerful Excel add-in connects directly to market data feeds, bringing real-time option chain information into your spreadsheets. Designed for traders who need more flexibility than standard brokerage platforms offer, our tool lets you customize views, create custom calculations, and build your own trading models.</p>
+                <p>Whether you're a retail trader looking for an edge or a professional managing complex positions, our tool provides the data and flexibility you need. The intuitive interface makes it easy to spot trading opportunities, while the advanced features support sophisticated analysis.</p>
+            </div>
+            
+            <div class="product-section">
+                <h2>Pricing</h2>
+                <div class="pricing">
+                    <p>One-time purchase with lifetime updates</p>
+                    <div class="price">$149</div>
+                    <a href="#" class="btn">Buy Now</a>
+                    <p>30-day money back guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 TradeTools Pro. All rights reserved. This is not financial advice. Trading involves risk.</p>
+                <p>Contact: support@tradetoolspro.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
