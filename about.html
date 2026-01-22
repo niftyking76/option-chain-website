@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Trading Tools Hub</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-light: #93c5fd;
+            --primary-dark: #1d4ed8;
+            --gray: #6b7280;
+            --light: #f9fafb;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            height: 60vh;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .disclaimer {
+            font-size: 0.875rem;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>About Us</h1>
+            <p>Empowering traders with cutting-edge tools and technology for smarter decisions</p>
+        </div>
+    </header>
+    
+    <main>
+        <section>
+            <h2 class="section-title">Who We Are</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                Trading Tools Hub is a digital platform dedicated to providing professional-grade trading tools and analytics. 
+                We specialize in creating solutions that combine automation, real-time data analysis, and intuitive interfaces 
+                to help traders navigate the markets with confidence.
+            </p>
+        </section>
+        
+        <section style="background-color: var(--light);">
+            <h2 class="section-title">What We Build</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Data-driven Trading Tools</h3>
+                    <p>Our tools leverage real-time market data and historical patterns to provide actionable insights for traders of all levels.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Automation & Algorithms</h3>
+                    <p>We develop sophisticated algorithms that automate trading strategies while maintaining full user control.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Market Analysis Dashboards</h3>
+                    <p>Customizable dashboards that consolidate key metrics and indicators into a single, easy-to-use interface.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">Our Mission</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                We believe trading technology should be accurate, simple, and trader-first. Our mission is to bridge the gap between 
+                institutional-grade tools and individual traders by creating accessible yet powerful solutions. We're committed to 
+                continuous innovation while maintaining transparency and reliability in everything we build.
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="disclaimer">
+            Trading involves risk. Past performance is not indicative of future results. The content on this site is for informational purposes only and should not be considered financial advice.
+        </div>
+    </footer>
+</body>
+</html>
